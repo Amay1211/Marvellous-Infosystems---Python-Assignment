@@ -1,0 +1,16 @@
+Directory Scanned : C:\Users\Coditas-Admin\Desktop\Marvellous Infosystems Assignments\Assignment_31\folder
+Total Files : 8
+Total Subdirectories : 4
+Scan Time : 2026-07-22 00:25:48.928064
+Directory Scanned : C:\Users\Coditas-Admin\Desktop\Marvellous Infosystems Assignments\Assignment_31\folder
+Total Files : 8
+Total Subdirectories : 4
+Scan Time : 2026-07-22 00:25:53.932022
+Directory Scanned : C:\Users\Coditas-Admin\Desktop\Marvellous Infosystems Assignments\Assignment_31\folder
+Total Files : 8
+Total Subdirectories : 4
+Scan Time : 2026-07-22 00:25:58.935430
+Directory Scanned : C:\Users\Coditas-Admin\Desktop\Marvellous Infosystems Assignments\Assignment_31\folder
+Total Files : 8
+Total Subdirectories : 4
+Scan Time : 2026-07-22 00:26:03.938505

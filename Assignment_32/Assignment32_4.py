@@ -42,7 +42,7 @@ def main():
       print("python fileName.py sourceFolderName destinationFolderName")
       print("Directory name should be absoulte path")
     else:
-     schedule.every(5).seconds.do(copyFiles,sys.argv[1], sys.argv[2])
+     schedule.every(10).minutes.do(copyFiles,sys.argv[1], sys.argv[2])
 
      while True:
        schedule.run_pending()

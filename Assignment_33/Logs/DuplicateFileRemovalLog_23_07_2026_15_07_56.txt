@@ -1,0 +1,6 @@
+Starting Time Of Directory Scanning : 23_07_2026_15_07_56
+Name of Directory Scan : Marvellous
+Total Number of files Scanned : 11
+Total Number of duplicates: 0
+Total Number of duplicated deleted : 0
+Completion Time Of Directory Scanning : 23_07_2026_15_07_56

@@ -14,8 +14,8 @@ from utils import validation, calculateChecksum
 
 
 def sendEmail(receiverEmail , fileName,filePath, currentDateTime, completionTime,directoryName, totalNumberOfFileScanned, totalNumberOfDuplicates, totalNumberOfDuplicatesDelete):
-  SMTP_USER=""
-  SMTP_APP_PASSWORD="rkyqnjtrxtvxpnrx"
+  SMTP_USER="example@gmail.com"
+  SMTP_APP_PASSWORD="password"
   SMTP_RECEIVER_EMAIL = receiverEmail
 
   # instance of MIMEMultipart

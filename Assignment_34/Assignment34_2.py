@@ -18,7 +18,6 @@ def processScan():
 
 def procInfo(folderName, ProcessName):
   BORDER = "-" * 50
-  RUNNING_STATUS = "runnig"
   ret = False
   ret = os.path.exists(folderName)
 

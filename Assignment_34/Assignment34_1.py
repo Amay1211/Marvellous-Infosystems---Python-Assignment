@@ -17,7 +17,7 @@ def processScan():
 
 def procInfo(folderName):
   BORDER = "-" * 50
-  RUNNING_STATUS = "runnig"
+  RUNNING_STATUS = "running"
   ret = False
   ret = os.path.exists(folderName)
 
@@ -41,7 +41,7 @@ def procInfo(folderName):
   fobj.write(BORDER + "\n\n")
 
   data = processScan()
-  runnigProcess = list(filter(lambda data: data["status"] == "running", data))
+  runnigProcess = list(filter(lambda data: data["status"] == RUNNING_STATUS, data))
   for info in runnigProcess:
     fobj.write("PID: %s\n" %info.get("pid"))
     fobj.write("Name: %s\n" %info.get("name"))

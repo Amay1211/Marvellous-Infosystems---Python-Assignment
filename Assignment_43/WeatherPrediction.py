@@ -1,38 +1,47 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import (accuracy_score, confusion_matrix, classification_report)
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
 
 def WeatherPrediction(datasetPath):
+    df = pd.read_csv(datasetPath)
+    print("Dateset loaded successfully")
+    print("Shape of dateset", df.shape)
+    print("First few entries are ")
+    print(df.head())
 
-  df =  pd.read_csv(datasetPath)
-  print("Dateset loaded successfully")
-  print("Shape of dateset", df.shape) 
-  print("First few entries are ")
-  print(df.head())
+    print("Columns are ", list(df.columns))
+    df["Wether"] = df["Wether"].map({"Sunny": 0, "Overcast": 1, "Rainy": 2})
+    df["Temperature"] = df["Temperature"].map({"Cool": 0, "Mild": 1, "Hot": 2})
 
-  print("Columns are ", list(df.columns))
-  df["Wether"] = df["Wether"].map({"Sunny": 0, "Overcast": 1, "Rainy": 2})
-  df["Temperature"] = df["Temperature"].map({"Cool": 0, "Mild": 1, "Hot": 2})
+    x = df.drop(columns=["Play"])
+    y = df["Play"]
 
+    k = 19
 
-  x = df.drop(columns=["Play"])
-  y = df["Play"]
+    xTrain, xTest, yTrain, yTest = train_test_split(
+        x, y, test_size=0.2, random_state=42
+    )
+    print(xTrain, xTest, yTrain, yTest)
 
-  k = 19
+    model = KNeighborsClassifier(n_neighbors=k)
+    model = model.fit(xTrain, yTrain)
+    yPred = model.predict(xTest)
 
-  xTrain, xTest, yTrain, yTest = train_test_split(x, y, test_size= 0.2, random_state= 42)
-  print(xTrain, xTest, yTrain, yTest )
+    accuracy = accuracy_score(yTest, yPred) * 100
+    print(accuracy)
 
-  model = KNeighborsClassifier(n_neighbors=k)
-  model = model.fit(xTrain,yTrain)
-  yPred = model.predict(xTest)
+    print("Confusion Matrix : ")
+    print(confusion_matrix(yTest, yPred))
 
-  accuracy = accuracy_score(yTest,yPred) * 100
-  print(accuracy)
+    print("Classification Report ")
+    print(classification_report(yTest, yPred))
+
 
 def main():
-  WeatherPrediction("MarvellousInfosystems_PlayPredictor.csv")
+    WeatherPrediction("MarvellousInfosystems_PlayPredictor.csv")
+
 
 if __name__ == "__main__":
-  main()
+    main()
